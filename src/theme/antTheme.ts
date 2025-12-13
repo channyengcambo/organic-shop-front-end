@@ -7,7 +7,7 @@ export const antTheme: ThemeConfig = {
     colorWarning: "#FF8A00",
     colorError: "#EA4B48",
 
-    borderRadius: 8,
+    borderRadius: 4,
     fontSize: 14,
 
     fontFamily: "Inter, system-ui, sans-serif",

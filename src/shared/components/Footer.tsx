@@ -1,7 +1,5 @@
-import React from "react";
-
 const Footer = () => {
-  return <div>Footer</div>;
+  return <div style={{ width: "80%", margin: "0 auto" }}>Footer</div>;
 };
 
 export default Footer;
