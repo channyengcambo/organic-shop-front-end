@@ -1,26 +1,31 @@
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
-import AppBar from "@/shared/components/AppBar";
-import Footer from "@/shared/components/Footer";
+import AppBar from "@/shared/components/appBar/AppBar";
+import FooterComponent from "@/shared/components/footer/compoments/FooterComponent";
+import SubscribeSection from "@/shared/components/footer/compoments/SubscribeSection";
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 export function CustomerLayout() {
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout>
       <Header
         style={{
           background: "#fff",
-          height: "100px",
+          height: "95px",
+          padding: 0,
         }}
       >
         <AppBar />
       </Header>
 
-      <Content style={{ width: "80%", margin: "0 auto" }}>
+      <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
         <Outlet />
       </Content>
-      <Footer />
+      <SubscribeSection />
+      <Footer style={{ background: "#1A1A1A", padding: "40px 0" }}>
+        <FooterComponent />
+      </Footer>
     </Layout>
   );
 }

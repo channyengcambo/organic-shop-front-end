@@ -1,0 +1,23 @@
+.footerItemHead {
+  color: #fff !important;
+}
+
+.ul {
+  color: #99a1af !important;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.li:hover {
+  color: #fff !important;
+  cursor: pointer;
+}
