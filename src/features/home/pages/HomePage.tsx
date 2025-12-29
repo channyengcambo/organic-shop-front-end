@@ -1,3 +1,4 @@
+import PopularCategories from "../popular-category/PopularCategories";
 import CustomerFeature from "./customer-feature/CustomerFeature";
 import HeroComponent from "./hero/HeroComponent";
 
@@ -6,6 +7,7 @@ const HomePage = () => {
     <div>
       <HeroComponent />
       <CustomerFeature />
+      <PopularCategories />
     </div>
   );
 };

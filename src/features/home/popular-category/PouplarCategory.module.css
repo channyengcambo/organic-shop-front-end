@@ -1,0 +1,34 @@
+.productCard {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.productCard:hover {
+  border-color: #52c41a;
+  box-shadow: 0 12px 28px rgba(82, 196, 26, 0.25);
+}
+
+/* Image styling */
+.coverImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Optional image zoom on hover */
+.productCard:hover .coverImage {
+  transform: scale(1.05);
+}
+
+/* Title hover color */
+.cardTitle {
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.productCard:hover .cardTitle {
+  color: #52c41a;
+}
