@@ -29,6 +29,7 @@
   transition: color 0.3s ease;
 }
 
-.productCard:hover .cardTitle {
+/* Target Ant internal title */
+.productCard:hover :global(.ant-card-meta-title) {
   color: #52c41a;
 }

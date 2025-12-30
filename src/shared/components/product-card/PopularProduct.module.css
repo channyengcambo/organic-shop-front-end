@@ -1,0 +1,127 @@
+.productCard {
+  border-radius: 0px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.productCard :global(.ant-card-body) {
+  padding: 10px;
+}
+
+.CardHeader {
+  position: relative;
+}
+
+.CardHead {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.CardHeadLabel {
+  display: flex;
+  gap: 5px;
+}
+
+.cardHeadAction {
+  opacity: 0;
+  transform: translateX(10px);
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.productCard:hover .cardHeadAction {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imageWrapper :global(img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.productCard:hover {
+  border-color: #52c41a;
+  box-shadow: 0 12px 28px rgba(82, 196, 26, 0.25);
+}
+
+/* Image styling */
+.coverImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cardBody {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Optional image zoom on hover */
+.productCard:hover .coverImage {
+  transform: scale(1.05);
+}
+
+/* Title hover color */
+.title {
+  text-align: left;
+  transition: color 0.3s ease;
+  color: #71717b !important;
+}
+
+/* Target Ant internal title */
+.productCard:hover .title {
+  color: #52c41a !important;
+}
+
+.addToCartButton {
+  transition: all 0.3s ease;
+}
+
+.productCard:hover .addToCartButton {
+  background-color: #52c41a !important;
+  color: #fff;
+}
+.cartIcon {
+  font-size: 20px;
+}
+
+.addToCartButton:hover .cartIcon {
+  color: #fff;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.defaultPrice {
+  margin: 0 !important;
+  text-decoration: line-through;
+  color: #71717b !important;
+}
