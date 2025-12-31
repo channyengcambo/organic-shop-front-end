@@ -5,6 +5,7 @@ import HeroComponent from "./hero/HeroComponent";
 import PopularProduct from "./popular-product/PopularProduct";
 import TopDeteal from "./hot-deal/HotDeteal";
 import EventSale from "./event-sale/EventSale";
+import FeatureProduct from "./feature-product/FeatureProduct";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <FlashSale />
       <TopDeteal />
       <EventSale />
+      <FeatureProduct />
     </div>
   );
 };
