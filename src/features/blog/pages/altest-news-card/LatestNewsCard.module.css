@@ -1,0 +1,73 @@
+.cardContainer {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.cardContainer :global(.ant-card-body) {
+  padding: 0;
+  height: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postDated {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.postDatedText {
+  font-weight: normal;
+  margin: 0 !important;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contentHeaderItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contentIcon {
+  font-size: 20px;
+  color: #71717b !important;
+}
+
+.contentHeaderTag {
+  font-weight: normal;
+  margin: 0 !important;
+  transition: color 0.3s ease;
+}
+
+.cardContainer:hover .contentTitle {
+  color: #2c742f !important;
+}

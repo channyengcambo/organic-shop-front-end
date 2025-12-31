@@ -1,6 +1,6 @@
 import { Card } from "antd";
-import type { PopularCategoryType } from "../types/PopularCategoryType";
 import styles from "./PouplarCategory.module.css";
+import type { PopularCategoryType } from "../../types/PopularCategoryType";
 
 const { Meta } = Card;
 

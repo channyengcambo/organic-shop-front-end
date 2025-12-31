@@ -1,4 +1,4 @@
-import type { PopularProductType } from "../types/PopularProductType";
+import type { PopularProductType } from "../../products/types/PopularProductType";
 
 export const HotDealData: PopularProductType[] = [
   {

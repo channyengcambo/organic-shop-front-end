@@ -1,7 +1,7 @@
 import SectionHeader from "@/shared/components/section-header/SectionHeader";
 import { Col, Row } from "antd";
 import PopularCategoryCard from "./PopularCategoryCard";
-import { PopularCategoryData } from "../data/PopularCategoryData";
+import { PopularCategoryData } from "../../data/PopularCategoryData";
 
 const PopularCategories = () => {
   return (

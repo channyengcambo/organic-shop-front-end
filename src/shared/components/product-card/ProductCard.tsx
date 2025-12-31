@@ -1,6 +1,6 @@
 import { Button, Card, Image, Rate, Typography } from "antd";
 import styles from "./PopularProduct.module.css";
-import type { PopularProductType } from "@/features/home/types/PopularProductType";
+import type { PopularProductType } from "@/features/products/types/PopularProductType";
 import CustomTag from "../tag/CustomTag";
 import {
   EyeOutlined,

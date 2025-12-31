@@ -8,6 +8,7 @@ import { Button, theme, Typography } from "antd";
 
 const SectionHeader: React.FC<SectionHeaderType> = ({
   title,
+  isTtileCenter = false,
   isShowViewMore = true,
   isShowNextIcon,
   isShowPreviousIcon,
@@ -27,7 +28,12 @@ const SectionHeader: React.FC<SectionHeaderType> = ({
         margin: margin || "30px 0 10px 0",
       }}
     >
-      <Typography.Title level={3}>{title}</Typography.Title>
+      <Typography.Title
+        level={3}
+        style={{ textAlign: isTtileCenter ? "center" : "left", width: "100%" }}
+      >
+        {title}
+      </Typography.Title>
 
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         {isShowViewMore && (

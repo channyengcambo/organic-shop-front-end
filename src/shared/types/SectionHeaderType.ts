@@ -1,5 +1,6 @@
 export interface SectionHeaderType {
   title: string;
+  isTtileCenter?: boolean;
   isShowViewMore?: boolean | true;
   isShowNextIcon?: boolean;
   nextIconBgColor?: string;

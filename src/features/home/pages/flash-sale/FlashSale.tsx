@@ -4,7 +4,7 @@ import { FlashSaleData } from "../../data/FalshSaleData";
 
 const FlashSale = () => {
   return (
-    <Row style={{ margin: "30px 0 0 0" }}>
+    <Row gutter={[24, 24]} style={{ margin: "30px 0 0 0" }}>
       {FlashSaleData.map((item) => (
         <Col span={8} key={item.id}>
           <FlshsaleCard proms={item} />
