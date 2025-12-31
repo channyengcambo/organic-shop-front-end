@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import styles from "./CountdownTimer.module.css";
-import type { CountdownTimerType } from "@/shared/types/CountdownTimerType";
 
 interface CountdownTimerProps {
   targetDate: Date;
-  proms?: CountdownTimerType;
+  isShowBgColor?: boolean;
+  timeColor?: string;
+  timeMarkColor?: string;
 }
 
-const CountdownTimer = ({ targetDate, proms }: CountdownTimerProps) => {
+const CountdownTimer = ({
+  targetDate,
+  isShowBgColor,
+  timeColor,
+  timeMarkColor,
+}: CountdownTimerProps) => {
   const calculateTimeLeft = () => {
     const difference = targetDate.getTime() - new Date().getTime();
 
@@ -37,25 +43,59 @@ const CountdownTimer = ({ targetDate, proms }: CountdownTimerProps) => {
 
   return (
     <div
-      className={`${styles.timerContainer} ${proms?.isShowBgColor ? styles.timerContainerBg : ""}`}
+      className={`${styles.timerContainer} ${isShowBgColor ? styles.timerContainerBg : ""}`}
     >
-      <TimeBox value={format(timeLeft.days)} label="DAYS" />
+      <TimeBox
+        value={format(timeLeft.days)}
+        label="DAYS"
+        timeColor={timeColor}
+        timeMarkColor={timeMarkColor}
+      />
       <Separator />
-      <TimeBox value={format(timeLeft.hours)} label="HOURS" />
+      <TimeBox
+        value={format(timeLeft.hours)}
+        label="HOURS"
+        timeColor={timeColor}
+        timeMarkColor={timeMarkColor}
+      />
       <Separator />
-      <TimeBox value={format(timeLeft.minutes)} label="MINS" />
+      <TimeBox
+        value={format(timeLeft.minutes)}
+        label="MINS"
+        timeColor={timeColor}
+        timeMarkColor={timeMarkColor}
+      />
       <Separator />
-      <TimeBox value={format(timeLeft.seconds)} label="SECS" />
+      <TimeBox
+        value={format(timeLeft.seconds)}
+        label="SECS"
+        timeColor={timeColor}
+        timeMarkColor={timeMarkColor}
+      />
     </div>
   );
 };
 
 export default CountdownTimer;
 
-const TimeBox = ({ value, label }: { value: string; label: string }) => (
+const TimeBox = ({
+  value,
+  label,
+  timeColor,
+  timeMarkColor,
+}: {
+  value: string;
+  label: string;
+  timeColor?: string;
+  timeMarkColor?: string;
+}) => (
   <div className={styles.timeBox}>
-    <div className={styles.value}>{value}</div>
-    <div className={styles.label}>{label}</div>
+    <div className={styles.value} style={{ color: timeColor || "" }}>
+      {value}
+    </div>
+    <div className={styles.label} style={{ color: timeMarkColor || "" }}>
+      {label}
+    </div>
   </div>
 );
 

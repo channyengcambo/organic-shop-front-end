@@ -1,4 +1,4 @@
-import { Tag } from "antd";
+import { Tag, Typography } from "antd";
 type Model = {
   title: string;
   bgColor?: string;
@@ -9,9 +9,9 @@ const CustomTag = (proms: Model) => {
     <Tag
       color={proms?.bgColor}
       variant="solid"
-      style={{ padding: proms.padding || "" }}
+      style={{ padding: proms.padding || "2px 10px" }}
     >
-      {proms.title}
+      <Typography.Text style={{ color: "#fff" }}>{proms.title}</Typography.Text>
     </Tag>
   );
 };

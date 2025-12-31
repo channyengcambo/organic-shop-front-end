@@ -4,6 +4,7 @@
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
   position: relative;
+  height: 100%;
 }
 
 .productCard :global(.ant-card-body) {
@@ -51,6 +52,11 @@
 .imageWrapper {
   width: 100%;
   height: 200px;
+  overflow: hidden;
+}
+.imageHotDeal {
+  width: 100%;
+  height: 50%;
   overflow: hidden;
 }
 
@@ -124,4 +130,38 @@
   margin: 0 !important;
   text-decoration: line-through;
   color: #71717b !important;
+}
+
+/* Is Hot deal */
+.hotDealAction {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+}
+
+.addToCart {
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #52c41a;
+}
+
+.addToCart:hover {
+  background-color: #52c41a !important;
+}
+
+.hotDealContent {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.timerEnd {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
