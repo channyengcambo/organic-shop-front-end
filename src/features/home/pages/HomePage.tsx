@@ -4,6 +4,7 @@ import FlashSale from "./flash-sale/FlashSale";
 import HeroComponent from "./hero/HeroComponent";
 import PopularProduct from "./popular-product/PopularProduct";
 import TopDeteal from "./hot-deal/HotDeteal";
+import EventSale from "./event-sale/EventSale";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <PopularProduct />
       <FlashSale />
       <TopDeteal />
+      <EventSale />
     </div>
   );
 };
