@@ -1,0 +1,35 @@
+.timerContainer {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #fff;
+  width: fit-content;
+}
+
+.timerContainerBg {
+  background: linear-gradient(135deg, #0a74c9, #0d4fa3);
+}
+
+.timeBox {
+  text-align: center;
+  min-width: 60px;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.label {
+  font-size: 11px;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+
+.separator {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 14px;
+}

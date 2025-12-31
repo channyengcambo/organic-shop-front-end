@@ -1,0 +1,17 @@
+import { Col, Row } from "antd";
+import FlshsaleCard from "./FlshsaleCard";
+import { FlashSaleData } from "../../data/FalshSaleData";
+
+const FlashSale = () => {
+  return (
+    <Row gutter={24} style={{ margin: "30px 0" }}>
+      {FlashSaleData.map((item) => (
+        <Col span={8} key={item.id}>
+          <FlshsaleCard proms={item} />
+        </Col>
+      ))}
+    </Row>
+  );
+};
+
+export default FlashSale;
