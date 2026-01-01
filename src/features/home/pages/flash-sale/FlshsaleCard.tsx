@@ -1,4 +1,4 @@
-import { Button, Card, Image, Typography } from "antd";
+import { Button, Card, Typography } from "antd";
 import styles from "./FlashSaleCard.module.css";
 import type { FlashSaleType } from "../../types/FlashSaleType";
 import CountdownTimer from "@/shared/components/countdown-timer/CountdownTimer";
@@ -6,11 +6,16 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import CustomTag from "@/shared/components/tag/CustomTag";
 
 interface FlshsaleCardProps {
+  titleSize?: 1 | 2 | 3 | 4 | 5;
+  cardHeight?: string;
   proms: FlashSaleType;
 }
-const FlshsaleCard: React.FC<FlshsaleCardProps> = ({ proms }) => {
+const FlshsaleCard: React.FC<FlshsaleCardProps> = ({
+  titleSize = 1,
+  cardHeight = "536px",
+  proms,
+}) => {
   const {
-    id,
     image,
     title,
     topLabel,
@@ -24,13 +29,18 @@ const FlshsaleCard: React.FC<FlshsaleCardProps> = ({ proms }) => {
   } = proms;
 
   return (
-    <Card className={styles.flashCard}>
+    <Card
+      className={styles.flashCard}
+      style={{
+        height: cardHeight,
+      }}
+    >
       <div className={styles.bg} style={{ backgroundImage: `url(${image})` }}>
         <div
           className={`${styles.overlayContent} ${isWhiteTextColor ? styles.whiteColor : ""}`}
         >
           <Typography.Title level={5}>{topLabel}</Typography.Title>
-          <Typography.Title level={1} className={styles.contentTitle}>
+          <Typography.Title level={titleSize} className={styles.contentTitle}>
             {title}
           </Typography.Title>
           {endIn && (
