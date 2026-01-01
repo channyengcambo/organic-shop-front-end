@@ -7,6 +7,7 @@ import EventSale from "./event-sale/EventSale";
 import FeatureProduct from "./feature-product/FeatureProduct";
 import LatestNews from "../../blog/pages/latest-news/LatestNews";
 import PopularProduct from "@/features/products/pages/popular-product/PopularProduct";
+import ClientTestimonials from "@/features/client-testimonials/pages/ClientTestimonials";
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <EventSale />
       <FeatureProduct />
       <LatestNews />
+      <ClientTestimonials />
     </div>
   );
 };
