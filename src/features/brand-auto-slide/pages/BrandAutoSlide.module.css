@@ -1,0 +1,24 @@
+.contentWrapper {
+  margin: 100px auto;
+}
+
+.brandWrapper {
+  width: 100%;
+}
+
+.brandItem {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandImage {
+  width: 100px;
+  height: 50px;
+}
+
+.brandImage :global(img) {
+  height: 50px;
+  object-fit: contain;
+  margin: 0;
+}

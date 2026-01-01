@@ -8,6 +8,7 @@ import FeatureProduct from "./feature-product/FeatureProduct";
 import LatestNews from "../../blog/pages/latest-news/LatestNews";
 import PopularProduct from "@/features/products/pages/popular-product/PopularProduct";
 import ClientTestimonials from "@/features/client-testimonials/pages/ClientTestimonials";
+import BrandAutoSlide from "@/features/brand-auto-slide/pages/BrandAutoSlide";
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
       <FeatureProduct />
       <LatestNews />
       <ClientTestimonials />
+      <BrandAutoSlide />
     </div>
   );
 };
