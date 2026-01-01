@@ -20,12 +20,7 @@ export const NavigationItems: NavigationItemType[] = [
   {
     id: "2",
     title: "Shop",
-    link: "",
-    items: [
-      {
-        title: "Shop Item 1",
-      },
-    ],
+    link: "/shop",
   },
   { id: "3", title: "Blogs", link: "" },
   { id: "4", title: "About Us", link: "" },

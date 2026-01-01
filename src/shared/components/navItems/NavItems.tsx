@@ -1,38 +1,42 @@
 import { Typography } from "antd";
 import { FiPhoneCall } from "react-icons/fi";
 import NavItemListComponent from "./NavItemListComponent";
+import BreadCrumb from "../bread-crumb/BreadCrumb";
 
 const NavItems = () => {
   return (
-    <div
-      style={{
-        background: "#1A1A1A",
-        padding: "5px 0",
-      }}
-    >
+    <div>
       <div
         style={{
-          width: "80%",
-          margin: "0 auto",
-          color: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          background: "#1A1A1A",
+          padding: "5px 0",
         }}
       >
-        <NavItemListComponent />
-        <Typography.Text
+        <div
           style={{
+            width: "80%",
+            margin: "0 auto",
             color: "#fff",
             display: "flex",
             alignItems: "center",
-            gap: "5px",
+            justifyContent: "space-between",
           }}
         >
-          <FiPhoneCall style={{ fontSize: "24px" }} />
-          (+855) 123456
-        </Typography.Text>
+          <NavItemListComponent />
+          <Typography.Text
+            style={{
+              color: "#fff",
+              display: "flex",
+              alignItems: "center",
+              gap: "5px",
+            }}
+          >
+            <FiPhoneCall style={{ fontSize: "24px" }} />
+            (+855) 123456
+          </Typography.Text>
+        </div>
       </div>
+      <BreadCrumb />
     </div>
   );
 };
