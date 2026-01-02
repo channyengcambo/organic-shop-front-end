@@ -5,7 +5,7 @@ import Content from "./content/Content";
 const ShopPage = () => {
   return (
     <div style={{ marginTop: "20px" }}>
-      <Row>
+      <Row gutter={16}>
         <Col span={6}>
           <Filter />
         </Col>

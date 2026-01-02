@@ -11,9 +11,15 @@ import CountdownTimer from "../countdown-timer/CountdownTimer";
 
 interface ProductCardProps {
   product: PopularProductType;
+  hasBorderRadius?: boolean;
+  cardHeight?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  hasBorderRadius,
+  cardHeight,
+  product,
+}) => {
   const {
     id,
     coverImage,
@@ -41,7 +47,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   } = product;
 
   return (
-    <Card className={styles.productCard} hoverable>
+    <Card
+      className={styles.productCard}
+      hoverable
+      style={{
+        borderRadius: hasBorderRadius ? "8px" : 0,
+        height: cardHeight || "100%",
+      }}
+    >
       <div className={styles.CardHeader}>
         {/* Head */}
         <div className={styles.CardHead}>
@@ -82,11 +95,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Body */}
       {!isHotDeal ? (
         <div className={styles.cardBody}>
-          <div>
+          <div style={{ width: "100%" }}>
             <Typography.Title
               className={styles.title}
               level={5}
               style={{ fontWeight: "normal" }}
+              ellipsis={{ rows: 1 }}
             >
               {title}
             </Typography.Title>

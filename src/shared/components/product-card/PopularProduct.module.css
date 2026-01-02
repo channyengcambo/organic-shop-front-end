@@ -1,10 +1,8 @@
 .productCard {
-  border-radius: 0px;
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
   position: relative;
-  height: 100%;
 }
 
 .productCard :global(.ant-card-body) {
@@ -81,10 +79,12 @@
 }
 
 .cardBody {
+  width: 100%;
   margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Optional image zoom on hover */
@@ -106,6 +106,9 @@
 
 .addToCartButton {
   transition: all 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
 }
 
 .productCard:hover .addToCartButton {
