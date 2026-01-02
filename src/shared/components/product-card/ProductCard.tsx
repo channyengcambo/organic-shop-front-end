@@ -8,6 +8,7 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import CountdownTimer from "../countdown-timer/CountdownTimer";
+import { useProductActions } from "@/hooks/useProductActions";
 
 interface ProductCardProps {
   product: PopularProductType;
@@ -20,6 +21,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   cardHeight,
   product,
 }) => {
+  const { viewProductDetail } = useProductActions();
+
   const {
     id,
     coverImage,
@@ -54,6 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         borderRadius: hasBorderRadius ? "8px" : 0,
         height: cardHeight || "100%",
       }}
+      onClick={() => viewProductDetail(id)}
     >
       <div className={styles.CardHeader}>
         {/* Head */}
@@ -71,10 +75,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {/* Action */}
           {!isHotDeal && (
             <div className={styles.cardHeadAction}>
-              <Button shape="circle">
+              <Button
+                shape="circle"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
                 <HeartOutlined style={{ fontSize: "20px" }} />
               </Button>
-              <Button shape="circle">
+              <Button
+                shape="circle"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
                 <EyeOutlined style={{ fontSize: "20px" }} />
               </Button>
             </div>
@@ -117,7 +131,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </div>
             <Rate disabled allowHalf value={userRating} size="small" />
           </div>
-          <Button shape="circle" className={styles.addToCartButton}>
+          <Button
+            shape="circle"
+            className={styles.addToCartButton}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
             <ShoppingCartOutlined className={styles.cartIcon} />
           </Button>
         </div>

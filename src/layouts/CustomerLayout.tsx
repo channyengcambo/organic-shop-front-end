@@ -4,6 +4,7 @@ import AppBar from "@/shared/components/appBar/AppBar";
 import FooterComponent from "@/shared/components/footer/compoments/FooterComponent";
 import SubscribeSection from "@/shared/components/footer/compoments/SubscribeSection";
 import NavItems from "@/shared/components/navItems/NavItems";
+import ScrollToTop from "@/shared/components/scroll-to-top/ScrollToTop";
 
 const { Header, Content, Footer } = Layout;
 
@@ -22,6 +23,7 @@ export function CustomerLayout() {
       <NavItems />
 
       <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
+        <ScrollToTop />
         <Outlet />
       </Content>
       <SubscribeSection />
