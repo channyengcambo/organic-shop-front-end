@@ -1,14 +1,17 @@
-import { Col, Image, Input, Row, Divider, Space, Badge } from "antd";
+import { Col, Image, Input, Row, Divider, Badge, Button, Flex } from "antd";
 import {
   SearchOutlined,
   HeartOutlined,
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { useCartDrawer } from "@/hooks/useCardDrawer";
 
 const { Search } = Input;
 
 const AppBar = () => {
+  const { openDrawer } = useCartDrawer();
+
   return (
     <Row
       align={"middle"}
@@ -42,16 +45,23 @@ const AppBar = () => {
       </Col>
 
       <Col style={{ display: "flex", alignItems: "center", height: "100%" }}>
-        <HeartOutlined style={{ fontSize: 24, cursor: "pointer" }} />
+        <Button shape="circle">
+          <HeartOutlined style={{ fontSize: 24, cursor: "pointer" }} />
+        </Button>
         <Divider orientation="vertical" size="large" />
-        <Space align="center">
+        <Flex align="center" gap={20}>
           <Badge count={5}>
-            <ShoppingCartOutlined style={{ fontSize: 24, cursor: "pointer" }} />
+            <Button shape="circle" onClick={() => openDrawer()}>
+              <ShoppingCartOutlined
+                style={{ fontSize: 24, cursor: "pointer" }}
+              />
+            </Button>
           </Badge>
-          <UserOutlined
-            style={{ fontSize: 24, cursor: "pointer", marginLeft: "20px" }}
-          />
-        </Space>
+
+          <Button shape="circle">
+            <UserOutlined style={{ fontSize: 24 }} />
+          </Button>
+        </Flex>
       </Col>
     </Row>
   );

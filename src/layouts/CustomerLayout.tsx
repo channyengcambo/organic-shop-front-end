@@ -6,32 +6,40 @@ import SubscribeSection from "@/shared/components/footer/compoments/SubscribeSec
 import NavItems from "@/shared/components/navItems/NavItems";
 import ScrollToTop from "@/shared/components/scroll-to-top/ScrollToTop";
 import GlobalHotPreview from "@/shared/components/global-hot-preview/GlobalHotPreview";
+import CartDrawer from "@/shared/components/cart-drawer/pages/CartDrawer";
+import { CartDrawerProvider } from "@/context/CartDrawerContext";
 
 const { Header, Content, Footer } = Layout;
 
 export function CustomerLayout() {
   return (
-    <Layout>
-      <Header
-        style={{
-          background: "#fff",
-          height: "95px",
-          padding: 0,
-        }}
-      >
-        <AppBar />
-      </Header>
-      <NavItems />
+    <CartDrawerProvider>
+      <Layout>
+        <Header
+          style={{
+            background: "#fff",
+            height: "95px",
+            padding: 0,
+          }}
+        >
+          <AppBar />
+        </Header>
 
-      <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
-        <ScrollToTop />
-        <Outlet />
-        <GlobalHotPreview />
-      </Content>
-      <SubscribeSection />
-      <Footer style={{ background: "#1A1A1A", padding: "40px 0" }}>
-        <FooterComponent />
-      </Footer>
-    </Layout>
+        <NavItems />
+
+        <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
+          <ScrollToTop />
+          <Outlet />
+          <GlobalHotPreview />
+          <CartDrawer />
+        </Content>
+
+        <SubscribeSection />
+
+        <Footer style={{ background: "#1A1A1A", padding: "40px 0" }}>
+          <FooterComponent />
+        </Footer>
+      </Layout>
+    </CartDrawerProvider>
   );
 }
