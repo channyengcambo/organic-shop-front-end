@@ -5,6 +5,7 @@ import FooterComponent from "@/shared/components/footer/compoments/FooterCompone
 import SubscribeSection from "@/shared/components/footer/compoments/SubscribeSection";
 import NavItems from "@/shared/components/navItems/NavItems";
 import ScrollToTop from "@/shared/components/scroll-to-top/ScrollToTop";
+import GlobalHotPreview from "@/shared/components/global-hot-preview/GlobalHotPreview";
 
 const { Header, Content, Footer } = Layout;
 
@@ -25,6 +26,7 @@ export function CustomerLayout() {
       <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
         <ScrollToTop />
         <Outlet />
+        <GlobalHotPreview />
       </Content>
       <SubscribeSection />
       <Footer style={{ background: "#1A1A1A", padding: "40px 0" }}>

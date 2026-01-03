@@ -1,12 +1,17 @@
-import { prodcutDetailData } from "../data/prodcutDetailData";
-import AllProductDetailInfor from "./all-product-detail-info/AllProductDetailInfor";
-import RelatedProducts from "../../related-products/pages/RelatedProducts";
-import HotPreview from "./hot-preview/HotPreview";
+import { useHotPreviewStore } from "@/stores/useHotPreviewStore";
+import { Modal } from "antd";
+import HotPreview from "../product-detail/pages/hot-preview/HotPreview";
+import { prodcutDetailData } from "../product-detail/data/prodcutDetailData";
 
-const ProductDetail = () => {
+const GlobalHotPreview = () => {
+  const { open, closePreview } = useHotPreviewStore();
   return (
-    <div>
-      {/* Image and prof product info */}
+    <Modal
+      open={open}
+      onCancel={() => closePreview()}
+      footer={null}
+      width={1400}
+    >
       <HotPreview
         allImages={prodcutDetailData.allImage}
         coverImage={prodcutDetailData.coverImage}
@@ -19,14 +24,8 @@ const ProductDetail = () => {
         preViewStar={prodcutDetailData.userRating}
         quantity={prodcutDetailData.quantity}
       />
-
-      {/* All product detail info */}
-      <AllProductDetailInfor />
-
-      {/* Related Products */}
-      <RelatedProducts />
-    </div>
+    </Modal>
   );
 };
 
-export default ProductDetail;
+export default GlobalHotPreview;

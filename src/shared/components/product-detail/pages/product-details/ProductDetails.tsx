@@ -18,16 +18,20 @@ type ProductDetailproms = {
   discountRate?: number;
   shortDescription?: string;
   productCategory?: string;
+  userPreview?: number;
+  previewStar?: number;
 };
 
 const ProductDetails = ({
   title,
   quantity,
-  totalPrice = 120,
-  price = 100,
-  discountRate = 10,
+  totalPrice,
+  price,
+  discountRate,
   shortDescription,
   productCategory,
+  userPreview,
+  previewStar = 0,
 }: ProductDetailproms) => {
   const { token } = theme.useToken();
 
@@ -40,18 +44,20 @@ const ProductDetails = ({
         </Typography.Title>
         <CustomTag
           title={quantity ? "In Stock" : "Out of Stock"}
-          bgColor={quantity ? "#D8F999" : "#FFC9C9"}
-          textColor={quantity ? token.colorPrimary : token.colorError}
+          bgColor={quantity ? "#D0FAE5" : "#FFE2E2"}
+          textColor={quantity ? token.colorSuccess : token.colorError}
         />
       </Flex>
 
       {/* Rating */}
       <Flex align="center" gap={50}>
         <Flex align="center" gap={8}>
-          <Rate value={4} size="small" disabled />
-          <Typography.Text className={`${styles.maringZero} greyText1`}>
-            4 Reviews
-          </Typography.Text>
+          <Rate value={previewStar} size="small" disabled />
+          {userPreview && (
+            <Typography.Text className={`${styles.maringZero} greyText1`}>
+              {userPreview} Reviews
+            </Typography.Text>
+          )}
         </Flex>
         <Flex align="center">
           <Typography.Title level={5} className={styles.maringZero}>
@@ -71,7 +77,7 @@ const ProductDetails = ({
               className={`${styles.maringZero} ${styles.fontWeihtNormal} greyText1 ${styles.lineThrow}`}
               level={3}
             >
-              ${totalPrice}
+              ${totalPrice?.toFixed(2)}
             </Typography.Title>
           )}
           <Typography.Title
@@ -79,15 +85,15 @@ const ProductDetails = ({
             style={{ color: token.colorSuccess }}
             level={3}
           >
-            ${price}
+            ${price?.toFixed(2)}
           </Typography.Title>
         </Flex>
 
         {discountRate && (
           <CustomTag
-            title={`${discountRate}% OFF`}
+            title={`${discountRate.toFixed(2)}% OFF`}
             isCircle
-            bgColor="#FFC9C9"
+            bgColor="#FFE2E2"
             textColor={token.colorError}
           />
         )}

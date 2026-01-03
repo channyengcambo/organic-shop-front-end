@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import CountdownTimer from "../countdown-timer/CountdownTimer";
 import { useProductActions } from "@/hooks/useProductActions";
+import { useHotPreviewStore } from "@/stores/useHotPreviewStore";
 
 interface ProductCardProps {
   product: PopularProductType;
@@ -22,6 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   product,
 }) => {
   const { viewProductDetail } = useProductActions();
+  const openPreview = useHotPreviewStore((s) => s.openPreview);
 
   const {
     id,
@@ -87,6 +89,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 shape="circle"
                 onClick={(e) => {
                   e.stopPropagation();
+                  openPreview("1");
                 }}
               >
                 <EyeOutlined style={{ fontSize: "20px" }} />
@@ -145,10 +148,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div>
           {/* Action */}
           <div className={styles.hotDealAction}>
-            <Button shape="circle">
+            <Button
+              shape="circle"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               <HeartOutlined style={{ fontSize: "20px" }} />
             </Button>
-            <Button className={styles.addToCart}>
+            <Button
+              className={styles.addToCart}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               <Typography.Title level={5} style={{ margin: 0, color: "#fff" }}>
                 Add To Cart
               </Typography.Title>
@@ -156,7 +169,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 style={{ color: "#fff", fontSize: "20px" }}
               />
             </Button>
-            <Button shape="circle">
+            <Button
+              shape="circle"
+              onClick={(e) => {
+                e.stopPropagation();
+                openPreview("1");
+              }}
+            >
               <EyeOutlined style={{ fontSize: "20px" }} />
             </Button>
           </div>

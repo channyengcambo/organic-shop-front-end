@@ -20,10 +20,10 @@ export const prodcutDetailData: PopularProductType = {
   ],
   title: "Chinese cabbage",
   price: 12.0,
-  totalPrice: 12.0,
-  discountRate: 0,
+  totalPrice: 22.0,
+  discountRate: 12,
   userRating: 4,
-  totalUserFeedBack: 0,
+  totalUserFeedBack: 20,
   shortDiscription:
     "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ",
   discription: "",
@@ -34,6 +34,6 @@ export const prodcutDetailData: PopularProductType = {
   status: "",
   categoryName: "Vegetables",
   tags: [],
-  quantity: 0,
+  quantity: 2,
   brandName: "",
 };
