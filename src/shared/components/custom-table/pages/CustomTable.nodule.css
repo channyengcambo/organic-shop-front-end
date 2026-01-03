@@ -1,0 +1,31 @@
+.custom-table .ant-table {
+  background: transparent !important;
+}
+
+.custom-table .ant-table-container {
+  background: transparent !important;
+}
+
+.custom-table .ant-table-content {
+  background: transparent !important;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  background: transparent !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  background: transparent !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.custom-table .ant-table-tbody > tr:hover > td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Table outer border */
+.custom-table .ant-table-container {
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}

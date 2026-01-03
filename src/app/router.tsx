@@ -4,6 +4,7 @@ import PageNotFound from "@/shared/components/PageNotFound";
 import HomePage from "@/features/home/pages/HomePage";
 import ShopPage from "@/features/shop/pages/ShopPage";
 import ProductDetail from "@/shared/components/product-detail/pages/ProductDetail";
+import WishList from "@/features/wishlist/pages/WishList";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
         path: "/product-detail/:id",
         element: <ProductDetail />,
         handle: { breadcrumb: "Product Detail" },
+      },
+      {
+        path: "/my-wishlist",
+        element: <WishList />,
+        handle: { breadcrumb: "My Wishlist" },
       },
     ],
   },

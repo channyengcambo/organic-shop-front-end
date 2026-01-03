@@ -6,10 +6,13 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { useCartDrawer } from "@/hooks/useCardDrawer";
+import { useNavigate } from "react-router-dom";
 
 const { Search } = Input;
 
 const AppBar = () => {
+  const navigate = useNavigate();
+
   const { openDrawer } = useCartDrawer();
 
   return (
@@ -45,7 +48,7 @@ const AppBar = () => {
       </Col>
 
       <Col style={{ display: "flex", alignItems: "center", height: "100%" }}>
-        <Button shape="circle">
+        <Button shape="circle" onClick={() => navigate("/my-wishlist")}>
           <HeartOutlined style={{ fontSize: 24, cursor: "pointer" }} />
         </Button>
         <Divider orientation="vertical" size="large" />
