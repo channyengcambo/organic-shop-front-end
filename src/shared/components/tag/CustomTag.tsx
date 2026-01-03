@@ -7,6 +7,7 @@ type Model = {
   isCircle?: boolean;
   startIcon?: ComponentType<{ style?: React.CSSProperties }>;
   endIcon?: ComponentType<{ style?: React.CSSProperties }>;
+  textColor?: string;
 };
 const CustomTag = (proms: Model) => {
   return (
@@ -23,7 +24,9 @@ const CustomTag = (proms: Model) => {
       }}
     >
       {proms?.startIcon && <proms.startIcon style={{ fontSize: "20px" }} />}
-      <Typography.Text style={{ color: "#fff" }}>{proms.title}</Typography.Text>
+      <Typography.Text style={{ color: proms.textColor || "#fff" }}>
+        {proms.title}
+      </Typography.Text>
       {proms?.endIcon && <proms.endIcon style={{ fontSize: "20px" }} />}
     </Tag>
   );

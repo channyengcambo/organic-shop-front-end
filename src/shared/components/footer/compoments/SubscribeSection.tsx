@@ -1,14 +1,12 @@
 import { Button, Col, Input, Row, Space, Typography } from "antd";
-import {
-  FacebookOutlined,
-  InstagramOutlined,
-  TikTokOutlined,
-} from "@ant-design/icons";
+import SocailMedi from "../../socail-medi/SocailMedi";
+
 const SubscribeSection = () => {
   return (
     <div
       style={{
         background: "#fff",
+        marginTop: "30px",
       }}
     >
       <Row
@@ -31,13 +29,7 @@ const SubscribeSection = () => {
             <Input placeholder="Your email address" type="email" />
             <Button type="primary">Subscribe</Button>
           </Space.Compact>
-          <div style={{ display: "flex", gap: "10px" }}>
-            <FacebookOutlined style={{ fontSize: "24px", cursor: "pointer" }} />
-            <InstagramOutlined
-              style={{ fontSize: "24px", cursor: "pointer" }}
-            />
-            <TikTokOutlined style={{ fontSize: "24px", cursor: "pointer" }} />
-          </div>
+          <SocailMedi />
         </Col>
       </Row>
     </div>

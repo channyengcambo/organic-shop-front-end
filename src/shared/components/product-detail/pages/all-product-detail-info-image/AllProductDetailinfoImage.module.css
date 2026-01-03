@@ -1,0 +1,28 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.detailContent :global(.ant-card-body) {
+  padding: 10px;
+}
+
+.imageContainer {
+  width: 100%;
+  min-height: 300px;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detailContent {
+  border: none;
+}
+
+.detailContent :global(.ant-card) {
+  box-shadow: none;
+}
