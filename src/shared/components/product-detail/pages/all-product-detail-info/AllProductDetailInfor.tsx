@@ -1,5 +1,7 @@
 import { Tabs } from "antd";
-import Description from "./Description";
+import Description from "./description/Description";
+import AdditionalInfor from "./additional-infor/AdditionalInfor";
+import CustomerFeedback from "./customer-feedback/CustomerFeedback";
 
 const AllProductDetailInfor = () => {
   return (
@@ -17,12 +19,12 @@ const AllProductDetailInfor = () => {
         {
           key: "2",
           label: "Additional Information",
-          children: <></>,
+          children: <AdditionalInfor />,
         },
         {
           key: "3",
           label: "Customer Feedback",
-          children: <></>,
+          children: <CustomerFeedback />,
         },
       ]}
     />

@@ -1,7 +1,7 @@
 import { prodcutDetailData } from "../data/prodcutDetailData";
-import AllProductDetailInfor from "./all-product-detail-info/AllProductDetailInfor";
 import RelatedProducts from "../../related-products/pages/RelatedProducts";
 import HotPreview from "./hot-preview/HotPreview";
+import AllProductDetailInfor from "./all-product-detail-info/AllProductDetailInfor";
 
 const ProductDetail = () => {
   return (
