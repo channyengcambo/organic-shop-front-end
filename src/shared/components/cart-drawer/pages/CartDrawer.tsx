@@ -3,10 +3,12 @@ import { Button, Col, Drawer, Flex, Row, theme, Typography } from "antd";
 import { cartDrawerData } from "../data/cartDrawerData";
 import CartDrawerItemCard from "./CartDrawerItemCard";
 import type { PopularProductType } from "@/features/products/types/PopularProductType";
+import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
   const { token } = theme.useToken();
   const { open, closeDrawer } = useCartDrawer();
+  const navigation = useNavigate();
 
   return (
     <Drawer
@@ -53,8 +55,12 @@ const CartDrawer = () => {
               borderRadius: "50px",
               width: "100%",
             }}
+            onClick={() => {
+              navigation("/my-shopping-cart");
+              closeDrawer();
+            }}
           >
-            Checkout
+            Go To Cart
           </Button>
         </Flex>
       </Flex>

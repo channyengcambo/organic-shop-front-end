@@ -5,6 +5,7 @@ import HomePage from "@/features/home/pages/HomePage";
 import ShopPage from "@/features/shop/pages/ShopPage";
 import ProductDetail from "@/shared/components/product-detail/pages/ProductDetail";
 import WishList from "@/features/wishlist/pages/WishList";
+import Cart from "@/features/cart/pages/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,12 @@ export const router = createBrowserRouter([
       {
         path: "/my-wishlist",
         element: <WishList />,
-        handle: { breadcrumb: "My Wishlist" },
+        handle: { breadcrumb: "Wishlist" },
+      },
+      {
+        path: "/my-shopping-cart",
+        element: <Cart />,
+        handle: { breadcrumb: "Shopping Cart" },
       },
     ],
   },

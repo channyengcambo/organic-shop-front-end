@@ -1,7 +1,16 @@
-import { Table, Image, Typography, Space, Rate, Button, theme } from "antd";
+import {
+  Table,
+  Image,
+  Typography,
+  Space,
+  Rate,
+  Button,
+  theme,
+  Flex,
+} from "antd";
 import type { TableProps } from "antd";
 import CustomTag from "../../tag/CustomTag";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import "./CustomTable.nodule.css";
 
 function CustomTable<T extends { id: string }>({
@@ -72,20 +81,46 @@ function CustomTable<T extends { id: string }>({
         );
       }
 
+      //   Quantity
+      if (col.type === "quantity") {
+        return (
+          <Flex align="center" gap={10}>
+            <Button shape="circle">
+              <MinusOutlined />
+            </Button>
+            <Typography.Text strong>{record.quantity}</Typography.Text>
+            <Button shape="circle">
+              <PlusOutlined />
+            </Button>
+          </Flex>
+        );
+      }
+
+      //   Sub total
+      if (col.type === "sub-total-price") {
+        return (
+          <Typography.Text strong>
+            ${(record.quantity * record.totalPrice).toFixed(2)}
+          </Typography.Text>
+        );
+      }
+
       //   Action
       if (col.type === "action") {
         return (
           <Space>
-            <Button
-              style={{
-                borderRadius: "50px",
-                backgroundColor: record.quantity ? token.colorPrimary : "",
-                color: "#fff",
-              }}
-              disabled={!record.quantity}
-            >
-              Add to Cart
-            </Button>
+            {!col.hideAddToCart && (
+              <Button
+                style={{
+                  borderRadius: "50px",
+                  backgroundColor: record.quantity ? token.colorPrimary : "",
+                  color: "#fff",
+                }}
+                disabled={!record.quantity}
+              >
+                Add to Cart
+              </Button>
+            )}
             <Button danger shape="circle">
               <CloseOutlined />
             </Button>
