@@ -8,6 +8,7 @@ import ScrollToTop from "@/shared/components/scroll-to-top/ScrollToTop";
 import GlobalHotPreview from "@/shared/components/global-hot-preview/GlobalHotPreview";
 import CartDrawer from "@/shared/components/cart-drawer/pages/CartDrawer";
 import { CartDrawerProvider } from "@/context/CartDrawerContext";
+import { NavbarProvider } from "@/context/NavBarContext";
 
 const { Header, Content, Footer } = Layout;
 
@@ -25,8 +26,9 @@ export function CustomerLayout() {
           <AppBar />
         </Header>
 
-        <NavItems />
-
+        <NavbarProvider>
+          <NavItems />
+        </NavbarProvider>
         <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
           <ScrollToTop />
           <Outlet />

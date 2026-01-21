@@ -1,6 +1,7 @@
 import { HomeOutlined } from "@ant-design/icons";
 import { Button, Typography } from "antd";
 import type { NavigationMenuItem } from "./types/NavigationItemType";
+import { Link } from "react-router-dom";
 type SubNavbarItem = {
   data: NavigationMenuItem[];
 };
@@ -15,20 +16,26 @@ const SubNavbar = ({ data }: SubNavbarItem) => {
         padding: 2,
       }}
     >
-      {data.map((item, index) => (
-        <Button
-          type="text"
-          key={index}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            borderRadius: "4px",
-          }}
+      {data.map((item) => (
+        <Link
+          to={item?.full_path || ""}
+          key={item.id}
+          style={{ width: "100%" }}
         >
-          <Typography>{item.title}</Typography>
-          <HomeOutlined />
-        </Button>
+          <Button
+            type="text"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              borderRadius: "4px",
+              width: "100%",
+            }}
+          >
+            <Typography>{item.label}</Typography>
+            <HomeOutlined />
+          </Button>
+        </Link>
       ))}
     </div>
   );

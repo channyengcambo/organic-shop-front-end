@@ -1,27 +1,31 @@
 import { Button, Popover, Space } from "antd";
-import { NavigationItems } from "./data/NavigationItems";
 import { FaAngleDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SubNavbar from "./SubNavbar";
+import { useNavbar } from "@/context/NavBarContext";
 
 const NavItemListComponent = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const handleToggle = (id: string) => {
+  const { navItems, loading, error } = useNavbar();
+
+  const [activeMenu, setActiveMenu] = useState<number | null>(null);
+  const handleToggle = (id: number) => {
     setActiveMenu((prev) => (prev === id ? null : id));
   };
 
+  if (loading) return <p>Loading nav items...</p>;
+  if (error) return <p>Error: {error}</p>;
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "25px" }}>
-      {NavigationItems.map((item) =>
-        item.items ? (
+      {navItems?.map((item) =>
+        item.children_recursive.length > 0 ? (
           <Popover
             key={item.id}
             trigger="click"
             placement="bottomLeft"
             arrow={false}
-            content={<SubNavbar data={item.items} />}
-            onOpenChange={() => handleToggle("")}
+            content={<SubNavbar data={item.children_recursive} />}
+            onOpenChange={() => handleToggle(0)}
           >
             <Button
               type="link"
@@ -29,7 +33,7 @@ const NavItemListComponent = () => {
               onClick={() => handleToggle(item.id)}
             >
               <Space>
-                {item.title}
+                {item.label}
                 <FaAngleDown
                   style={{
                     marginLeft: 6,
@@ -42,12 +46,12 @@ const NavItemListComponent = () => {
             </Button>
           </Popover>
         ) : (
-          <Link key={item.title} to={item.link || "#"}>
+          <Link key={item.label} to={item.route || "#"}>
             <Button type="link" style={{ color: "#fff" }}>
-              {item.title}
+              {item.label}
             </Button>
           </Link>
-        )
+        ),
       )}
     </div>
   );
