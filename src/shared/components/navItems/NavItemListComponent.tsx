@@ -46,7 +46,7 @@ const NavItemListComponent = () => {
             </Button>
           </Popover>
         ) : (
-          <Link key={item.label} to={item.route || "#"}>
+          <Link key={item.label} to={item.full_path}>
             <Button type="link" style={{ color: "#fff" }}>
               {item.label}
             </Button>
