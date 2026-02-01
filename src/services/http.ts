@@ -5,6 +5,8 @@ const http = axios.create({
   baseURL: ENV.API_BASE_URL + ENV.API_VERSION,
   timeout: ENV.API_TIMEOUT,
   headers: {
+    "X-App-Key":
+      "akE7CQAlbmlMFait7tBdbzDOJQs4jh6qllkzp3wll968WRMCykl8CQDZ0j43rRRO",
     Accept: "application/json",
   },
 });
@@ -12,9 +14,12 @@ const http = axios.create({
 /* Request interceptor */
 http.interceptors.request.use((config) => {
   const token = localStorage.getItem("access_token");
-  if (token) {
+
+  // Skip token for public APIs
+  if (token && !config.url?.startsWith("/front-end-path")) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
   return config;
 });
 
