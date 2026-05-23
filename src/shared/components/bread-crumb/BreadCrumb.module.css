@@ -32,7 +32,7 @@
 }
 
 .overlayContent {
-  width: 78%;
+  width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   color: #fff;
   position: absolute;
@@ -46,4 +46,10 @@
 
 .titleText {
   color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .overlayContent {
+    width: min(100% - 24px, 1180px);
+  }
 }

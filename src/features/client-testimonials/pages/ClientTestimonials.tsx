@@ -16,7 +16,7 @@ const ClientTestimonials = () => {
 
       <Row gutter={[24, 24]}>
         {ClientTestimonialData.map((item: ClientTestimonialType) => (
-          <Col span={8} key={item.id}>
+          <Col xs={24} md={8} key={item.id}>
             <ClientTestimonialCard proms={item} />
           </Col>
         ))}

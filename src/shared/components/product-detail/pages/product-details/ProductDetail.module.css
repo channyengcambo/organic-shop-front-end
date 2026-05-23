@@ -9,3 +9,10 @@
 .lineThrow {
   text-decoration: line-through !important;
 }
+
+@media (max-width: 576px) {
+  .incressDecressButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

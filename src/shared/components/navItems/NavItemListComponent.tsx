@@ -3,34 +3,29 @@ import { FaAngleDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import SubNavbar from "./SubNavbar";
-import { useNavbar } from "@/context/NavBarContext";
+import styles from "./NavItems.module.css";
+import { navItems } from "./navItems.data";
 
 const NavItemListComponent = () => {
-  const { navItems, loading, error } = useNavbar();
-
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
-  const handleToggle = (id: number) => {
-    setActiveMenu((prev) => (prev === id ? null : id));
-  };
 
-  if (loading) return <p>Loading nav items...</p>;
-  if (error) return <p>Error: {error}</p>;
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "25px" }}>
-      {navItems?.map((item) =>
-        item.children_recursive.length > 0 ? (
+    <div className={styles.desktopNav}>
+      {navItems.map((item) =>
+        item.children?.length ? (
           <Popover
             key={item.id}
             trigger="click"
             placement="bottomLeft"
             arrow={false}
-            content={<SubNavbar data={item.children_recursive} />}
-            onOpenChange={() => handleToggle(0)}
+            content={<SubNavbar data={item.children} />}
+            onOpenChange={(open) => setActiveMenu(open ? item.id : null)}
           >
             <Button
               type="link"
-              style={{ color: "#fff" }}
-              onClick={() => handleToggle(item.id)}
+              onClick={() =>
+                setActiveMenu((prev) => (prev === item.id ? null : item.id))
+              }
             >
               <Space>
                 {item.label}
@@ -46,10 +41,8 @@ const NavItemListComponent = () => {
             </Button>
           </Popover>
         ) : (
-          <Link key={item.label} to={item.full_path}>
-            <Button type="link" style={{ color: "#fff" }}>
-              {item.label}
-            </Button>
+          <Link key={item.id} to={item.fullPath}>
+            <Button type="link">{item.label}</Button>
           </Link>
         ),
       )}

@@ -12,10 +12,10 @@ const RelatedProducts = () => {
         isShowViewMore={false}
         isTtileCenter
       />
-      <Row gutter={[10, 10]}>
+      <Row gutter={[16, 16]}>
         {relatedproductData.map((item: PopularProductType) => (
-          <Col span={6} key={item.id}>
-            <ProductCard product={item} cardHeight="350px" hasBorderRadius />
+          <Col xs={24} sm={12} lg={6} key={item.id}>
+            <ProductCard product={item} hasBorderRadius />
           </Col>
         ))}
       </Row>

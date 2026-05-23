@@ -1,0 +1,18 @@
+.preview {
+  margin-top: 30px;
+}
+
+.imageColumn {
+  height: clamp(460px, 50vh, 620px);
+  min-width: 0;
+}
+
+.detailColumn {
+  min-width: 0;
+}
+
+@media (max-width: 992px) {
+  .imageColumn {
+    height: auto;
+  }
+}

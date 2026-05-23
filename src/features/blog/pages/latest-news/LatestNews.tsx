@@ -14,7 +14,7 @@ const LatestNews = () => {
       />
       <Row gutter={[24, 24]}>
         {LatestNewsData.map((item: LatestNewType) => (
-          <Col span={8} key={item.id}>
+          <Col xs={24} md={8} key={item.id}>
             <LatestnewsCard proms={item} />
           </Col>
         ))}

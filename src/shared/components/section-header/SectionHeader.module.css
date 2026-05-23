@@ -1,0 +1,40 @@
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 42px 0 16px;
+}
+
+.title {
+  width: 100%;
+  margin: 0 !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+
+.centerTitle {
+  text-align: center;
+}
+
+.actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 576px) {
+  .sectionHeader {
+    align-items: flex-start;
+    margin: 34px 0 14px;
+  }
+
+  .title {
+    font-size: 24px !important;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+}

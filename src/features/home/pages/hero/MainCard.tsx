@@ -1,35 +1,18 @@
 import { Button, Card, Flex, Tag, theme, Typography } from "antd";
 import { IoArrowForward } from "react-icons/io5";
+import styles from "./HeroComponent.module.css";
+
 const { Title } = Typography;
 const MainCard = () => {
   const { token } = theme.useToken();
   return (
-    <Card
-      style={{
-        backgroundImage: 'url("/assets/images/hero/BigBanner.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "right",
-        height: "100%",
-        borderRadius: "12px",
-        padding: "40px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "start",
-        justifyContent: "center",
-      }}
-    >
-      <div style={{ width: "70%" }}>
-        <Title style={{ color: "#fff", fontWeight: "bold" }}>
+    <Card className={styles.mainCard}>
+      <div className={styles.mainContent}>
+        <Title className={styles.mainTitle}>
           Fresh & Healthy Organic Food
         </Title>
-        <div
-          style={{
-            borderLeft: `2px solid ${token.colorSuccess}`,
-            paddingLeft: "15px",
-            color: "#fff",
-          }}
-        >
-          <Flex align="center" gap={15}>
+        <div className={styles.mainCopy}>
+          <Flex align="center" gap={15} className={styles.saleRow}>
             <Typography.Title style={{ color: "#fff" }} level={4}>
               Sale up to
             </Typography.Title>
@@ -48,7 +31,7 @@ const MainCard = () => {
             Free shipping on all your order.
           </Typography>
         </div>
-        <Button style={{ marginTop: "20px" }}>
+        <Button className={styles.shopButton}>
           <Typography style={{ color: `${token.colorPrimary}` }}>
             Shop now
           </Typography>

@@ -2,6 +2,7 @@ import { Col, Row } from "antd";
 import React from "react";
 import ProductImages from "../product-images/ProductImages";
 import ProductDetails from "../product-details/ProductDetails";
+import styles from "./HotPreview.module.css";
 
 type HotPreviewProms = {
   coverImage?: string;
@@ -31,13 +32,13 @@ const HotPreview: React.FC<HotPreviewProms> = ({
   preViewStar,
 }) => {
   return (
-    <div style={{ marginTop: 30, minHeight: "50vh" }}>
-      <Row gutter={16} align="stretch">
-        <Col span={12} style={{ maxHeight: "50vh" }}>
+    <div className={styles.preview}>
+      <Row gutter={[24, 24]} align="stretch">
+        <Col xs={24} lg={12} className={styles.imageColumn}>
           <ProductImages coverImage={coverImage} allImages={allImages} />
         </Col>
 
-        <Col span={12}>
+        <Col xs={24} lg={12} className={styles.detailColumn}>
           <ProductDetails
             title={title}
             shortDescription={shortDescription}

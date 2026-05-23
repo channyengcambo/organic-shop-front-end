@@ -17,9 +17,9 @@ const AllProductDetailInforLayout = ({
   rightSpan = 12,
 }: TwoColumnLayoutProps) => {
   return (
-    <Row gutter={gutter}>
-      <Col span={leftSpan}>{left}</Col>
-      <Col span={rightSpan}>{right}</Col>
+    <Row gutter={[gutter, gutter]}>
+      <Col xs={24} lg={leftSpan}>{left}</Col>
+      <Col xs={24} lg={rightSpan}>{right}</Col>
     </Row>
   );
 };

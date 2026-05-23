@@ -28,7 +28,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const {
     id,
     coverImage,
-    allImage,
     title,
     price,
     totalPrice,
@@ -37,18 +36,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
     discountLabelBg,
     userRating,
     totalUserFeedBack,
-    shortDiscription,
-    discription,
     label,
     labelBg,
     isHotDeal,
-    hotDealEndIn,
-    slug,
-    status,
-    categoryName,
-    tags,
-    quantity,
-    brandName,
   } = product;
 
   return (

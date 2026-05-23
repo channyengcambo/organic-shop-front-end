@@ -1,4 +1,3 @@
-import type { PopularProductType } from "@/features/products/types/PopularProductType";
 import { useNavigate } from "react-router-dom";
 
 export const useProductActions = () => {
@@ -8,11 +7,11 @@ export const useProductActions = () => {
     navigate(`/product-detail/${productId}`);
   };
 
-  const addToCart = (product: PopularProductType) => {
+  const addToCart = () => {
     // call zustand / context / API
   };
 
-  const addToWishlist = (product: PopularProductType) => {
+  const addToWishlist = () => {
     // call zustand / context / API
   };
 

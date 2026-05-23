@@ -3,6 +3,9 @@
   position: relative;
   overflow: hidden;
   display: flex;
+  min-height: 420px;
+  border: 0;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
 }
 
 .bg {
@@ -38,9 +41,10 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  padding: 40px 16px;
+  padding: 40px 18px;
+  text-align: center;
 
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.22), transparent);
 }
 
 .whiteColor :global(.ant-typography) {
@@ -52,8 +56,16 @@
 }
 
 .contentLabel {
-  padding: 30px 30px;
+  padding: 22px 0;
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .flashCard {
+    min-height: 360px;
+  }
 }

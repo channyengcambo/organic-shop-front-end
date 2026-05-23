@@ -1,9 +1,14 @@
+.toolbar {
+  gap: 14px;
+}
+
 .sortBy {
   border-radius: 4px;
-  width: 200px;
+  width: min(200px, 100%);
   padding: 8px 20px;
   border: 1px solid #71717b;
   outline: none;
+  background: #fff;
 }
 
 .productGrid {
@@ -21,4 +26,11 @@
 .featuredItem {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+@media (max-width: 576px) {
+  .toolbar {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
 }

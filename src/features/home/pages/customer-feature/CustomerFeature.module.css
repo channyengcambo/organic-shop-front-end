@@ -1,0 +1,45 @@
+.card {
+  margin-top: 18px;
+  border-radius: 8px;
+}
+
+.card :global(.ant-card-body) {
+  padding: 22px 24px;
+}
+
+.feature {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  flex: 0 0 auto;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.title {
+  margin: 0 0 4px !important;
+  line-height: 1.25 !important;
+}
+
+.subTitle {
+  color: #71717b;
+  line-height: 1.45;
+}
+
+@media (max-width: 576px) {
+  .card :global(.ant-card-body) {
+    padding: 18px;
+  }
+
+  .feature {
+    align-items: flex-start;
+  }
+
+  .icon {
+    font-size: 32px;
+  }
+}

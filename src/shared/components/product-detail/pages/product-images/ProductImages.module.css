@@ -1,28 +1,32 @@
 /* Root container */
 .root {
-  height: 100%;
+  height: clamp(460px, 50vh, 620px);
   display: flex;
   gap: 12px;
+  min-width: 0;
 }
 
 /* Thumbnails column */
 .left {
-  width: 100px;
+  flex: 0 0 96px;
   height: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  /* Hide scrollbar (Firefox) */
-  scrollbar-width: none;
-  /* Hide scrollbar (IE & Edge legacy) */
-  -ms-overflow-style: none;
+  gap: 10px;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #b7df9d transparent;
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar (Chrome, Safari, Edge) */
 .left::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+
+.left::-webkit-scrollbar-thumb {
+  background: #b7df9d;
+  border-radius: 999px;
 }
 
 /* Thumbnail */
@@ -31,17 +35,24 @@
   border-radius: 8px;
   cursor: pointer;
   padding: 4px;
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .thumb img {
   width: 100%;
-  height: 60px;
+  aspect-ratio: 1 / 0.8;
+  height: auto;
   object-fit: cover;
   border-radius: 6px;
+  display: block;
 }
 
 .active {
   border-color: #52c41a;
+  box-shadow: 0 0 0 3px rgba(82, 196, 26, 0.14);
 }
 
 /* Main image */
@@ -53,11 +64,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fafafa;
+  background: #fff;
+  border: 1px solid #e5ece2;
+  overflow: hidden;
 }
 
 .right img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  padding: 18px;
+}
+
+@media (max-width: 768px) {
+  .root {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    flex: none;
+    width: 100%;
+    height: 86px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    gap: 8px;
+    padding: 0 0 6px;
+  }
+
+  .thumb {
+    flex: 0 0 74px;
+  }
+
+  .right {
+    height: clamp(300px, 58vh, 430px);
+  }
+}
+
+@media (max-width: 420px) {
+  .right {
+    height: 300px;
+  }
+
+  .right img {
+    padding: 12px;
+  }
 }

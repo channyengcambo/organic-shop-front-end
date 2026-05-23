@@ -1,12 +1,13 @@
-import { Col, Image, Input, Row, Divider, Badge, Button, Flex } from "antd";
+import { Badge, Button, Image, Input, Tooltip } from "antd";
 import {
-  SearchOutlined,
   HeartOutlined,
+  SearchOutlined,
   ShoppingCartOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { useCartDrawer } from "@/hooks/useCardDrawer";
 import { useNavigate } from "react-router-dom";
+import styles from "./AppBar.module.css";
 
 const { Search } = Input;
 
@@ -16,57 +17,59 @@ const AppBar = () => {
   const { openDrawer } = useCartDrawer();
 
   return (
-    <Row
-      align={"middle"}
-      style={{
-        width: "80%",
-        margin: "0 auto",
-        height: "100px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        userSelect: "none",
-      }}
-    >
-      <Col>
+    <div className={styles.appBar}>
+      <div className={styles.logo}>
         <Image
           src="/assets/images/logo/Logo.png"
           alt="Logo image"
           preview={false}
         />
-      </Col>
+      </div>
 
-      <Col style={{ width: "500px" }}>
+      <div className={styles.search}>
         <Search
-          placeholder="Search"
+          placeholder="Search products"
           enterButton="Search"
           size="large"
           onSearch={() => {}}
           prefix={<SearchOutlined />}
-          width={"100%"}
         />
-      </Col>
+      </div>
 
-      <Col style={{ display: "flex", alignItems: "center", height: "100%" }}>
-        <Button shape="circle" onClick={() => navigate("/my-wishlist")}>
-          <HeartOutlined style={{ fontSize: 24, cursor: "pointer" }} />
-        </Button>
-        <Divider orientation="vertical" size="large" />
-        <Flex align="center" gap={20}>
+      <div className={styles.actions}>
+        <Tooltip title="Wishlist">
+          <Button
+            aria-label="Open wishlist"
+            className={styles.actionButton}
+            shape="circle"
+            onClick={() => navigate("/my-wishlist")}
+          >
+            <HeartOutlined style={{ fontSize: 21 }} />
+          </Button>
+        </Tooltip>
+        <Tooltip title="Cart">
           <Badge count={5}>
-            <Button shape="circle" onClick={() => openDrawer()}>
-              <ShoppingCartOutlined
-                style={{ fontSize: 24, cursor: "pointer" }}
-              />
+            <Button
+              aria-label="Open cart"
+              className={styles.actionButton}
+              shape="circle"
+              onClick={() => openDrawer()}
+            >
+              <ShoppingCartOutlined style={{ fontSize: 21 }} />
             </Button>
           </Badge>
-
-          <Button shape="circle">
-            <UserOutlined style={{ fontSize: 24 }} />
+        </Tooltip>
+        <Tooltip title="Account">
+          <Button
+            aria-label="Open account"
+            className={styles.actionButton}
+            shape="circle"
+          >
+            <UserOutlined style={{ fontSize: 21 }} />
           </Button>
-        </Flex>
-      </Col>
-    </Row>
+        </Tooltip>
+      </div>
+    </div>
   );
 };
 

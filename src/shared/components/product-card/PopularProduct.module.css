@@ -1,12 +1,15 @@
 .productCard {
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #e5ece2;
+  border-radius: 8px;
   position: relative;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
 }
 
 .productCard :global(.ant-card-body) {
-  padding: 10px;
+  height: 100%;
+  padding: 14px;
 }
 
 .CardHeader {
@@ -15,8 +18,8 @@
 
 .CardHead {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   right: 0;
   z-index: 2;
   display: flex;
@@ -49,7 +52,8 @@
 
 .imageWrapper {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 1 / 0.78;
+  height: auto;
   overflow: hidden;
 }
 .imageHotDeal {
@@ -63,11 +67,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.3s ease;
 }
 
 .productCard:hover {
   border-color: #52c41a;
-  box-shadow: 0 12px 28px rgba(82, 196, 26, 0.25);
+  box-shadow: 0 16px 34px rgba(82, 196, 26, 0.18);
 }
 
 /* Image styling */
@@ -80,7 +85,8 @@
 
 .cardBody {
   width: 100%;
-  margin-top: 40px;
+  min-height: 104px;
+  margin-top: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -107,7 +113,7 @@
 .addToCartButton {
   transition: all 0.3s ease;
   position: absolute;
-  bottom: 10px;
+  bottom: 8px;
   right: 0;
 }
 
@@ -155,11 +161,12 @@
 }
 
 .hotDealContent {
-  margin-top: 30px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  text-align: center;
 }
 
 .timerEnd {
@@ -167,4 +174,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 576px) {
+  .cardHeadAction {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 1 / 0.7;
+  }
 }

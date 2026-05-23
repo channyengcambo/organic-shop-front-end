@@ -5,6 +5,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import { Button, theme, Typography } from "antd";
+import styles from "./SectionHeader.module.css";
 
 const SectionHeader: React.FC<SectionHeaderType> = ({
   title,
@@ -21,21 +22,19 @@ const SectionHeader: React.FC<SectionHeaderType> = ({
   const { token } = theme.useToken();
   return (
     <div
+      className={styles.sectionHeader}
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
         margin: margin || "30px 0 10px 0",
       }}
     >
       <Typography.Title
+        className={`${styles.title} ${isTtileCenter ? styles.centerTitle : ""}`}
         level={3}
-        style={{ textAlign: isTtileCenter ? "center" : "left", width: "100%" }}
       >
         {title}
       </Typography.Title>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+      <div className={styles.actions}>
         {isShowViewMore && (
           <Button
             type="text"

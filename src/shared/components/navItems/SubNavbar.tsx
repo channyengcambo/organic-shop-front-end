@@ -1,15 +1,17 @@
-import { HomeOutlined } from "@ant-design/icons";
+import { RightOutlined } from "@ant-design/icons";
 import { Button, Typography } from "antd";
-import type { NavigationMenuItem } from "./types/NavigationItemType";
 import { Link } from "react-router-dom";
+import type { StaticNavItem } from "./navItems.data";
+
 type SubNavbarItem = {
-  data: NavigationMenuItem[];
+  data: StaticNavItem[];
 };
+
 const SubNavbar = ({ data }: SubNavbarItem) => {
   return (
     <div
       style={{
-        width: "400px",
+        width: "min(320px, calc(100vw - 48px))",
         display: "flex",
         flexDirection: "column",
         gap: 2,
@@ -18,7 +20,7 @@ const SubNavbar = ({ data }: SubNavbarItem) => {
     >
       {data.map((item) => (
         <Link
-          to={item?.full_path || ""}
+          to={item.fullPath}
           key={item.id}
           style={{ width: "100%" }}
         >
@@ -33,7 +35,7 @@ const SubNavbar = ({ data }: SubNavbarItem) => {
             }}
           >
             <Typography>{item.label}</Typography>
-            <HomeOutlined />
+            <RightOutlined />
           </Button>
         </Link>
       ))}

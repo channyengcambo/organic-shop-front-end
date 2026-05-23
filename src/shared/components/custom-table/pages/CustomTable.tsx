@@ -10,7 +10,12 @@ import {
 } from "antd";
 import type { TableProps } from "antd";
 import CustomTag from "../../tag/CustomTag";
-import { CloseOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import {
+  DeleteOutlined,
+  MinusOutlined,
+  PlusOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import "./CustomTable.nodule.css";
 
 function CustomTable<T extends { id: string }>({
@@ -84,12 +89,12 @@ function CustomTable<T extends { id: string }>({
       //   Quantity
       if (col.type === "quantity") {
         return (
-          <Flex align="center" gap={10}>
-            <Button shape="circle">
+          <Flex align="center" gap={10} className="custom-table-quantity">
+            <Button aria-label="Decrease quantity" shape="circle">
               <MinusOutlined />
             </Button>
             <Typography.Text strong>{record.quantity}</Typography.Text>
-            <Button shape="circle">
+            <Button aria-label="Increase quantity" shape="circle">
               <PlusOutlined />
             </Button>
           </Flex>
@@ -108,21 +113,25 @@ function CustomTable<T extends { id: string }>({
       //   Action
       if (col.type === "action") {
         return (
-          <Space>
+          <Space className="custom-table-actions">
             {!col.hideAddToCart && (
               <Button
-                style={{
-                  borderRadius: "50px",
-                  backgroundColor: record.quantity ? token.colorPrimary : "",
-                  color: "#fff",
-                }}
+                className="custom-table-cart-button"
                 disabled={!record.quantity}
+                icon={<ShoppingCartOutlined />}
+                type={record.quantity ? "primary" : "default"}
               >
                 Add to Cart
               </Button>
             )}
-            <Button danger shape="circle">
-              <CloseOutlined />
+            <Button
+              aria-label="Remove item"
+              className="custom-table-remove-button"
+              danger
+              shape="circle"
+              type="text"
+            >
+              <DeleteOutlined />
             </Button>
           </Space>
         );

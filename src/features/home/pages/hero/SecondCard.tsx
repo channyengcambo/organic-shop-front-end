@@ -1,38 +1,23 @@
 import { Card } from "antd";
 import React from "react";
+import styles from "./HeroComponent.module.css";
 interface SecondCardProps extends React.PropsWithChildren {
   image: string;
   children: React.ReactNode;
-  imageBlur?: number;
+  isDark?: boolean;
 }
 
-const SecondCard = ({ children, image, imageBlur = 0 }: SecondCardProps) => {
+const SecondCard = ({ children, image, isDark = false }: SecondCardProps) => {
   return (
-    <Card
-      style={{
-        position: "relative",
-        overflow: "hidden",
-        height: "50%",
-      }}
-    >
+    <Card className={styles.promoCard}>
       <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `url(${image})`,
-          backgroundSize: "cover",
-          filter: `blur(${imageBlur}px)`,
-          transform: "scale(1.1)",
-          zIndex: 1,
-        }}
+        className={styles.promoImage}
+        style={{ backgroundImage: `url(${image})` }}
       />
       <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          color: "#fff",
-        }}
-      >
+        className={`${styles.promoOverlay} ${isDark ? styles.darkOverlay : ""}`}
+      />
+      <div className={styles.promoContent}>
         {children}
       </div>
     </Card>

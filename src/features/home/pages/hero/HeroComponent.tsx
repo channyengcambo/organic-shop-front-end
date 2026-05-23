@@ -2,37 +2,22 @@ import { Button, Col, Row, theme, Typography } from "antd";
 import MainCard from "./MainCard";
 import SecondCard from "./SecondCard";
 import { IoArrowForward } from "react-icons/io5";
+import styles from "./HeroComponent.module.css";
 
 const HeroComponent = () => {
   const { token } = theme.useToken();
   return (
-    <Row style={{ padding: "20px 0", height: "60vh" }} gutter={16}>
-      <Col span={16}>
+    <Row className={styles.hero} gutter={[18, 18]}>
+      <Col xs={24} lg={16}>
         <MainCard />
       </Col>
-      <Col
-        span={8}
-        style={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          gap: "20px",
-        }}
-      >
+      <Col xs={24} lg={8} className={styles.sideColumn}>
         <SecondCard image="/assets/images/hero/2.jpg">
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "end",
-              color: "#000",
-            }}
-          >
-            <h4>SUMMER SALE</h4>
-            <h1>75% OFF</h1>
-            <p>Only Fruit & Vegetable</p>
-            <Button type="text">
+          <div className={`${styles.promoCenter} ${styles.promoRight}`}>
+            <h4 className={styles.promoEyebrow}>Summer Sale</h4>
+            <h1 className={styles.promoTitle}>75% OFF</h1>
+            <p className={styles.promoText}>Only Fruit & Vegetable</p>
+            <Button type="text" className={styles.shopButton}>
               <Typography style={{ color: `${token.colorPrimary}` }}>
                 Shop now
               </Typography>
@@ -40,20 +25,11 @@ const HeroComponent = () => {
             </Button>
           </div>
         </SecondCard>
-        <SecondCard image="/assets/images/hero/3.jpg" imageBlur={2.5}>
-          <div
-            style={{
-              width: "70%",
-              margin: "0 auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <h4>Best Deal</h4>
-            <h1>Special Products Deal of the Month</h1>
-            <Button>
+        <SecondCard image="/assets/images/hero/3.jpg" isDark>
+          <div className={styles.promoCenter}>
+            <h4 className={styles.promoEyebrow}>Best Deal</h4>
+            <h1 className={styles.promoTitle}>Special Products Deal</h1>
+            <Button className={styles.shopButton}>
               <Typography style={{ color: `${token.colorPrimary}` }}>
                 Shop now
               </Typography>

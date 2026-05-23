@@ -7,7 +7,7 @@ import type { PopularProductType } from "@/features/products/types/PopularProduc
 const Content = () => {
   return (
     <Flex vertical gap={30}>
-      <Flex align="center" justify="space-between">
+      <Flex className={styles.toolbar} align="center" justify="space-between">
         <div>
           <Typography.Text>Sort By: </Typography.Text>
           <select className={styles.sortBy}>
@@ -23,10 +23,10 @@ const Content = () => {
           <Typography.Text>Results Found</Typography.Text>
         </Flex>
       </Flex>
-      <Row gutter={[10, 10]}>
+      <Row gutter={[16, 16]}>
         {ContentProducts.map((item: PopularProductType) => (
-          <Col span={6} key={item.id}>
-            <ProductCard product={item} hasBorderRadius cardHeight="350px" />
+          <Col xs={24} sm={12} xl={6} key={item.id}>
+            <ProductCard product={item} hasBorderRadius />
           </Col>
         ))}
       </Row>

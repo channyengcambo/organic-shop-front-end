@@ -38,7 +38,7 @@ const ProductDetails = ({
   return (
     <Flex vertical gap={20}>
       {/* Title */}
-      <Flex align="center" gap={15}>
+      <Flex align="center" gap={15} wrap>
         <Typography.Title level={1} className={styles.maringZero}>
           {title}
         </Typography.Title>
@@ -50,7 +50,7 @@ const ProductDetails = ({
       </Flex>
 
       {/* Rating */}
-      <Flex align="center" gap={50}>
+      <Flex align="center" gap={24} wrap>
         <Flex align="center" gap={8}>
           <Rate value={previewStar} size="small" disabled />
           {userPreview && (
@@ -70,7 +70,7 @@ const ProductDetails = ({
       </Flex>
 
       {/* Price */}
-      <Flex align="center" gap={30}>
+      <Flex align="center" gap={20} wrap>
         <Flex align="center" gap={15}>
           {discountRate && (
             <Typography.Title
@@ -102,7 +102,7 @@ const ProductDetails = ({
       <Divider />
 
       {/* Brand */}
-      <Flex align="center" justify="space-between">
+      <Flex align="center" justify="space-between" gap={16} wrap>
         <Flex align="center" gap={5}>
           <Typography.Text style={{ fontWeight: "bold" }} className="greyText1">
             Brand:{" "}
@@ -125,7 +125,7 @@ const ProductDetails = ({
       <Divider />
 
       {/* Add to card */}
-      <Flex align="center" gap={20}>
+      <Flex align="center" gap={14} wrap>
         <Flex align="center" gap={20} className={styles.incressDecressButton}>
           <Button shape="circle">
             <MinusOutlined />
@@ -156,7 +156,7 @@ const ProductDetails = ({
 
       {/* Category */}
       <Flex vertical gap={5}>
-        <Flex align="center" gap={5}>
+        <Flex align="center" gap={5} wrap>
           <Typography.Title level={5} className={`${styles.maringZero}`}>
             Category:{" "}
           </Typography.Title>
@@ -164,7 +164,7 @@ const ProductDetails = ({
             {productCategory}
           </Typography.Text>
         </Flex>
-        <Flex align="center" gap={5}>
+        <Flex align="center" gap={5} wrap>
           <Typography.Title level={5} className={`${styles.maringZero}`}>
             Tag:{" "}
           </Typography.Title>

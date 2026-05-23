@@ -3,7 +3,7 @@ import { Button, Card, Divider, Flex, theme, Typography } from "antd";
 const TotalCart = () => {
   const { token } = theme.useToken();
   return (
-    <Card style={{ borderRadius: "4px", width: "100%" }} title="Cart Total">
+    <Card style={{ borderRadius: "8px", width: "100%" }} title="Cart Total">
       <Flex align="center" justify="space-between">
         <Typography.Text>Subtotal:</Typography.Text>
         <Typography.Text strong>$144.95</Typography.Text>

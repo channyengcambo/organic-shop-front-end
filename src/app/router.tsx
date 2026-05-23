@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { CustomerLayout } from "@/layouts/CustomerLayout";
-import PageNotFound from "@/shared/components/PageNotFound";
-import HomePage from "@/features/home/pages/HomePage";
-import ShopPage from "@/features/shop/pages/ShopPage";
-import ProductDetail from "@/shared/components/product-detail/pages/ProductDetail";
-import WishList from "@/features/wishlist/pages/WishList";
-import Cart from "@/features/cart/pages/Cart";
+import { CustomerLayout } from "../layouts/CustomerLayout";
+import PageNotFound from "../shared/components/PageNotFound";
+import HomePage from "../features/home/pages/HomePage";
+import ShopPage from "../features/shop/pages/ShopPage";
+import ProductDetail from "../shared/components/product-detail/pages/ProductDetail";
+import WishList from "../features/wishlist/pages/WishList";
+import Cart from "../features/cart/pages/Cart";
 
 export const router = createBrowserRouter([
   {

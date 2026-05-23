@@ -13,14 +13,11 @@ type LatestNewsProms = {
 };
 const LatestnewsCard: React.FC<LatestNewsProms> = ({ proms }) => {
   const {
-    id,
-    postedDate,
     tagsList,
     author,
     totalComment,
     title,
     imageCover,
-    allImages,
   } = proms;
   return (
     <Card className={styles.cardContainer} hoverable>

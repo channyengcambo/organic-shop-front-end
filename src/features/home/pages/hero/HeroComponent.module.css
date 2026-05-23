@@ -1,0 +1,190 @@
+.hero {
+  min-height: 560px;
+  padding: 24px 0 8px;
+}
+
+.sideColumn {
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mainCard {
+  height: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  background-image:
+    linear-gradient(90deg, rgba(17, 24, 39, 0.72), rgba(17, 24, 39, 0.12)),
+    url("/assets/images/hero/BigBanner.jpg");
+  background-size: cover;
+  background-position: right center;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.14);
+}
+
+.mainCard :global(.ant-card-body) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 48px;
+}
+
+.mainContent {
+  width: min(520px, 100%);
+}
+
+.mainTitle {
+  margin: 0 0 20px !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  line-height: 1.08 !important;
+}
+
+.mainCopy {
+  border-left: 3px solid #84cc16;
+  padding-left: 16px;
+  color: #fff;
+}
+
+.saleRow {
+  flex-wrap: wrap;
+}
+
+.shopButton {
+  height: 44px;
+  margin-top: 24px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.promoCard {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1);
+}
+
+.promoCard :global(.ant-card-body) {
+  height: 100%;
+  padding: 0;
+}
+
+.promoImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  z-index: 1;
+}
+
+.promoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.1));
+}
+
+.promoContent {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.promoRight {
+  margin-left: auto;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.promoCenter {
+  width: min(260px, 100%);
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.promoEyebrow {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.promoTitle {
+  margin: 0 0 6px;
+  font-size: 30px;
+  line-height: 1.05;
+}
+
+.promoText {
+  margin: 0 0 12px;
+}
+
+.darkOverlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.24));
+}
+
+@media (max-width: 992px) {
+  .hero,
+  .sideColumn {
+    min-height: auto;
+  }
+
+  .mainCard {
+    min-height: 440px;
+  }
+
+  .sideColumn {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promoCard {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 16px;
+  }
+
+  .mainCard {
+    min-height: 420px;
+    background-position: 68% center;
+  }
+
+  .mainCard :global(.ant-card-body) {
+    align-items: flex-end;
+    padding: 28px;
+  }
+
+  .mainTitle {
+    font-size: 34px !important;
+  }
+
+  .sideColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .promoCard {
+    min-height: 220px;
+  }
+
+  .promoContent {
+    padding: 22px;
+  }
+}

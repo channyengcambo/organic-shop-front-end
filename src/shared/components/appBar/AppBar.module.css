@@ -1,0 +1,69 @@
+.appBar {
+  width: min(1180px, calc(100% - 32px));
+  min-height: 96px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(220px, 500px) auto;
+  align-items: center;
+  gap: 24px;
+  user-select: none;
+}
+
+.logo {
+  width: 150px;
+}
+
+.logo :global(img) {
+  width: 100%;
+  height: auto;
+}
+
+.search {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .appBar {
+    width: min(100% - 24px, 1180px);
+    min-height: 116px;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .logo {
+    width: 128px;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .appBar {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .logo {
+    width: 116px;
+  }
+}

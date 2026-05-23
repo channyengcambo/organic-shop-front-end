@@ -2,9 +2,9 @@ import { Button, Card, Flex, Input, Space, Typography } from "antd";
 
 const CouponCode = () => {
   return (
-    <Card style={{ marginTop: "30px", borderRadius: "4px" }}>
+    <Card style={{ marginTop: "30px", borderRadius: "8px" }}>
       <div>
-        <Flex align="center" gap={20}>
+        <Flex align="center" gap={20} wrap>
           <Typography.Text strong style={{ whiteSpace: "nowrap" }}>
             Coupon Code
           </Typography.Text>

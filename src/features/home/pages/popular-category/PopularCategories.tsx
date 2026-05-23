@@ -10,7 +10,7 @@ const PopularCategories = () => {
 
       <Row gutter={[16, 16]}>
         {PopularCategoryData.map((item) => (
-          <Col span={4} key={item.id}>
+          <Col xs={12} sm={8} md={6} lg={4} key={item.id}>
             <PopularCategoryCard
               id={item.id}
               image={item.image}

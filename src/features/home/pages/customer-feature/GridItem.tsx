@@ -1,5 +1,6 @@
 import { theme, Typography } from "antd";
 import type { CustomerFeatureType } from "../../types/CustomerFeatureType";
+import styles from "./CustomerFeature.module.css";
 
 type GridItemProms = {
   proms: CustomerFeatureType;
@@ -11,11 +12,18 @@ const GridItem: React.FC<GridItemProms> = ({ subTitleColor, proms }) => {
   const Icon = proms.icon;
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
-      <Icon style={{ fontSize: "36px", color: token.colorPrimary }} />
+    <div className={styles.feature}>
+      <span className={styles.icon}>
+        <Icon style={{ color: token.colorPrimary }} />
+      </span>
       <div>
-        <Typography.Title level={5}>{proms.title}</Typography.Title>
-        <Typography style={{ color: subTitleColor || "#71717b" }}>
+        <Typography.Title className={styles.title} level={5}>
+          {proms.title}
+        </Typography.Title>
+        <Typography
+          className={styles.subTitle}
+          style={{ color: subTitleColor }}
+        >
           {proms.subTitle}
         </Typography>
       </div>

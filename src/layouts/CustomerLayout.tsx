@@ -8,7 +8,7 @@ import ScrollToTop from "@/shared/components/scroll-to-top/ScrollToTop";
 import GlobalHotPreview from "@/shared/components/global-hot-preview/GlobalHotPreview";
 import CartDrawer from "@/shared/components/cart-drawer/pages/CartDrawer";
 import { CartDrawerProvider } from "@/context/CartDrawerContext";
-import { NavbarProvider } from "@/context/NavBarContext";
+import styles from "./CustomerLayout.module.css";
 
 const { Header, Content, Footer } = Layout;
 
@@ -16,20 +16,12 @@ export function CustomerLayout() {
   return (
     <CartDrawerProvider>
       <Layout>
-        <Header
-          style={{
-            background: "#fff",
-            height: "95px",
-            padding: 0,
-          }}
-        >
+        <Header className={styles.header}>
           <AppBar />
         </Header>
 
-        <NavbarProvider>
-          <NavItems />
-        </NavbarProvider>
-        <Content style={{ width: "80%", margin: "0 auto", minHeight: "100vh" }}>
+        <NavItems />
+        <Content className={styles.content}>
           <ScrollToTop />
           <Outlet />
           <GlobalHotPreview />

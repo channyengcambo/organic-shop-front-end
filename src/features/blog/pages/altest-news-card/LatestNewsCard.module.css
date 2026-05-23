@@ -2,7 +2,8 @@
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #e5ece2;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
 }
 
 .cardContainer :global(.ant-card-body) {
@@ -13,7 +14,8 @@
 
 .imageWrapper {
   width: 100%;
-  height: 300px;
+  aspect-ratio: 1 / 0.68;
+  height: auto;
   overflow: hidden;
   position: relative;
 }
@@ -48,7 +50,8 @@
 .contentHeader {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .contentHeaderItem {
@@ -70,4 +73,9 @@
 
 .cardContainer:hover .contentTitle {
   color: #2c742f !important;
+}
+
+.cardContainer:hover {
+  box-shadow: 0 16px 34px rgba(82, 196, 26, 0.14);
+  border-color: #b7df9d;
 }

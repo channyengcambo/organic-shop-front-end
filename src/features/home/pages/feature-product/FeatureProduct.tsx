@@ -1,19 +1,19 @@
 import SectionHeader from "@/shared/components/section-header/SectionHeader";
-import { Col, Row } from "antd";
 import { FeatureProducts } from "../../data/FeatureProductData";
 import ProductCard from "@/shared/components/product-card/ProductCard";
+import styles from "./FeatureProduct.module.css";
 
 const FeatureProduct = () => {
   return (
     <div>
-      <SectionHeader title="Feature Prodcuts" />
-      <Row>
+      <SectionHeader title="Featured Products" />
+      <div className={styles.productGrid}>
         {FeatureProducts.map((item) => (
-          <Col key={item.id} flex="20%">
+          <div key={item.id}>
             <ProductCard product={item} />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };

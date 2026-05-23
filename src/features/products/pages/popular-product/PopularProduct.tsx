@@ -1,19 +1,19 @@
 import ProductCard from "@/shared/components/product-card/ProductCard";
 import SectionHeader from "@/shared/components/section-header/SectionHeader";
-import { Col, Row } from "antd";
 import { PopularProductData } from "../../data/PopularProductData";
+import styles from "./PopularProduct.module.css";
 
 const PopularProduct = () => {
   return (
     <div>
       <SectionHeader title="Popular Products" />
-      <Row>
+      <div className={styles.productGrid}>
         {PopularProductData.map((item) => (
-          <Col key={item.id} flex="20%">
+          <div key={item.id}>
             <ProductCard product={item} />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };
